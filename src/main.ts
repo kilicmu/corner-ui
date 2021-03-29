@@ -1,5 +1,9 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
+import { createApp } from 'vue'
+import Layouts from './layouts/index.vue'
+import router from './router'
+import '@/styles/main.css'
 
-createApp(App).use(router).mount('#app');
+createApp(Layouts).use(router).mount('#app')
+// new Vue({
+//   render: (h) => h(Layouts),
+// }).$mount('#app')

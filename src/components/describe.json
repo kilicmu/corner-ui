@@ -1,0 +1,15 @@
+{
+    "routes": [
+        {
+            "name": "index",
+            "path": "/",
+            "docPath": "/README"
+        },
+        {
+            "name": "button",
+            "path": "/button",
+            "docPath": "/button/README"
+        }
+    ]
+
+}
