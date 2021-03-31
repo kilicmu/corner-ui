@@ -17,6 +17,7 @@ export default defineComponent({
                 class="demo-phone__screen"
                 src="/mobile"
                 name="phone"
+                id="mobile-phone"
                 ref={iframeRef}
                 ></iframe>
                 <div

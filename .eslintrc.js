@@ -8,6 +8,7 @@ module.exports = {
     '@vue/airbnb',
     '@vue/typescript/recommended',
   ],
+  ignorePatterns: ['iconfont.js'],
   parserOptions: {
     ecmaVersion: 2020,
   },
@@ -33,7 +34,8 @@ module.exports = {
     'ban-ts-comment': 'off',
     'no-empty': 'off',
     'global-require': 'off',
-    'no-var-requires': 'off'
+    'no-var-requires': 'off',
+    'prefer-template': 'warn'
   },
   overrides: [
     {

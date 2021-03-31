@@ -1,0 +1,8 @@
+@import "../var.scss";
+@mixin blockqute($block) {
+  $blockName: $namespace + $block;
+
+  .#{$blockName} {
+    @content;
+  }
+}

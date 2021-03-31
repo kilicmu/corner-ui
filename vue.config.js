@@ -1,7 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const fs = require('fs')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { readdirSync, lstatSync } = require('fs')
 const { resolve, join } = require('path')
+const { COMPONENTS_PATH, DOCS_PATH } = require('./.config')
+require('dotenv').config()
+
+const components = readdirSync(COMPONENTS_PATH)
+  .filter((name) => lstatSync(join(COMPONENTS_PATH, name)).isDirectory())
+const docses = readdirSync(DOCS_PATH)
 
 module.exports = {
   pages: {
@@ -12,14 +16,6 @@ module.exports = {
       title: 'main page',
       chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
-    // unknow bug
-    // mobile: {
-    //   entry: 'src/mobile/main.ts',
-    //   template: 'public/index.html',
-    //   filename: 'mobile.html',
-    //   title: 'mobile page',
-    //   chunks: ['mobile'],
-    // },
     mobile: 'src/mobile/main.ts',
   },
   devServer: {

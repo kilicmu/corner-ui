@@ -1,14 +1,12 @@
 {
     "routes": [
         {
-            "name": "index",
-            "path": "/",
-            "docPath": "/README"
+            "name": "home",
+            "path": "/"
         },
         {
             "name": "button",
-            "path": "/button",
-            "docPath": "/button/README"
+            "path": "/button"
         }
     ]
 

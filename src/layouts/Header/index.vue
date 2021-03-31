@@ -4,7 +4,7 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     padding: 10px 0;
-    box-shadow: 1px 0px 0px 4px rgba(173, 173, 173, 0.5);
+    box-shadow: 1px 0px 6px 0px rgba(173, 173, 173, 0.5);
     &__icon {
       width: 45px;
       height: 45px;

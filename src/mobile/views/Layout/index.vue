@@ -5,14 +5,13 @@ export default defineComponent({
   setup() {
     return () => {
       return (
-        <div class="mobile-home">
+        <div>
+            <header></header>
+            <router-view></router-view>
+            <footer></footer>
         </div>
       )
     }
   },
 })
 </script>
-
-<style>
-
-</style>
