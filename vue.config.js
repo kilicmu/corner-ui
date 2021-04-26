@@ -1,11 +1,5 @@
-const { readdirSync, lstatSync } = require('fs')
-const { resolve, join } = require('path')
-const { COMPONENTS_PATH, DOCS_PATH } = require('./.config')
 require('dotenv').config()
-
-const components = readdirSync(COMPONENTS_PATH)
-  .filter((name) => lstatSync(join(COMPONENTS_PATH, name)).isDirectory())
-const docses = readdirSync(DOCS_PATH)
+require('./load-shells/describe-generate')
 
 module.exports = {
   pages: {

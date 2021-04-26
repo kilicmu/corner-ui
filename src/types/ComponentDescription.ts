@@ -1,9 +1,10 @@
-export interface DescriptionItem {
+export interface DescriptionItem<T = any> {
     name: string;
     path: string;
-    docPath: string;
+    component?: () => T;
     [key: string]: any;
 }
 export interface ComponentsDscription {
-    routes: DescriptionItem[];
+    components: string[];
+    route: DescriptionItem[];
 }

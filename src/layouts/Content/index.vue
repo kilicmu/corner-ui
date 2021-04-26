@@ -1,6 +1,5 @@
 <script lang="tsx">
 import { defineComponent } from 'vue'
-import Str from '@/styles/test.md'
 
 export default defineComponent({
   setup() {

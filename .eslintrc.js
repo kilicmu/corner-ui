@@ -35,7 +35,10 @@ module.exports = {
     'no-empty': 'off',
     'global-require': 'off',
     'no-var-requires': 'off',
-    'prefer-template': 'warn'
+    'prefer-template': 'warn',
+    "import/no-unresolved": "off",
+    'no-var-requires': 'off',
+    'import/extensions': 'off',
   },
   overrides: [
     {

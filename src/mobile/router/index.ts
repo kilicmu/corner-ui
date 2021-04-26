@@ -2,24 +2,27 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import {
   DescriptionItem, ComponentsDscription,
 } from '@/types/ComponentDescription'
-import describe from '@/components/describe.json'
+import describe from '@/common/describe.json'
 
 // enforce route description to add component lazy import function;
-const { routes: rs } = describe as ComponentsDscription
-console.log(rs)
+const { route: rs } = describe as ComponentsDscription
+
 // 对描述增强, 添加组件函数
 rs.forEach((r:DescriptionItem) => {
-  if (r.name === 'home') {
-    r.component = () => import(
-      // eslint-disable-next-line prefer-template
-      '../views/Home/index.vue'
-    )
-  } else {
+  r.component = () => import(
+    // issue for webpack
     // eslint-disable-next-line prefer-template
-    r.component = () => import(
-      `../../components/${r.name}/examples/index.vue`
-    )
-  }
+    '../../components/' + r.name + '/examples/index.vue'
+  )
+})
+
+rs.unshift({
+  name: 'home',
+  path: '/',
+  component: () => import(
+    // eslint-disable-next-line prefer-template
+    '../views/Home/index.vue'
+  ),
 })
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -40,7 +43,8 @@ interface MessageData {
 }
 
 window.addEventListener('message', (e) => {
-  if (e.data.to === router.currentRoute.value) {
+  console.log(e.data.to, router.currentRoute.value.fullPath)
+  if (e.data.to === router.currentRoute.value.fullPath) {
     return
   }
   if (e.data?.meta?.flag === 'router') {
@@ -51,7 +55,7 @@ window.addEventListener('message', (e) => {
 // 处理跳转前与mobile通信问题
 router.beforeEach((to, from, next) => {
   window.parent.postMessage({
-    to: to.path,
+    to: to.fullPath,
     meta: {
       from: 'mobile',
       flag: 'router',

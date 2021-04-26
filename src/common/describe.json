@@ -1,0 +1,36 @@
+{
+  "components": [
+    "button",
+    "button-group",
+    "icon",
+    "loading",
+    "overlay",
+    "popup"
+  ],
+  "route": [
+    {
+      "name": "button",
+      "path": "/button"
+    },
+    {
+      "name": "button-group",
+      "path": "/button-group"
+    },
+    {
+      "name": "icon",
+      "path": "/icon"
+    },
+    {
+      "name": "loading",
+      "path": "/loading"
+    },
+    {
+      "name": "overlay",
+      "path": "/overlay"
+    },
+    {
+      "name": "popup",
+      "path": "/popup"
+    }
+  ]
+}

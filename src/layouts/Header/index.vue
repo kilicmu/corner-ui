@@ -5,6 +5,11 @@
     background-color: rgb(255, 255, 255);
     padding: 10px 0;
     box-shadow: 1px 0px 6px 0px rgba(173, 173, 173, 0.5);
+    animation: translate .5s;
+    will-change: translate;
+    &--hidden {
+      translate: transformY(-100%);
+    }
     &__icon {
       width: 45px;
       height: 45px;
@@ -14,23 +19,12 @@
 }
 </style>
 <script lang="tsx">
-import { defineComponent, onMounted } from '@vue/runtime-dom'
-import { onUnmounted } from 'vue'
+import { defineComponent } from '@vue/runtime-dom'
 import logoSrc from '@/assets/corner-logo.png'
 
 export default defineComponent({
   name: 'header',
   setup() {
-    const srcollFn = (e: any) => {
-      console.log(e)
-    }
-    onMounted(() => {
-      document.addEventListener('DOMMouseScroll', srcollFn)
-    })
-
-    onUnmounted(() => {
-      document.removeEventListener('DOMMouseScroll', srcollFn)
-    })
     return () => (
         <div class="header">
             <img src={logoSrc} class="header__icon"></img>

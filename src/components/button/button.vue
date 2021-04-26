@@ -58,10 +58,6 @@ export default createComponent({
       return slots.icon?.()
     }
 
-    const handleClick = (e: MouseEvent) => {
-      emit('click', e)
-    }
-
     return () => {
       const {
         tag,

@@ -1,0 +1,14 @@
+import { createNamespace } from "{{utilsPath}}/create";
+import "./{{componentName}}.scss";
+
+const [createComponent, bem] = createNamespace("{{componentName}}");
+
+export default createComponent({
+    name: "{{componentName}}",
+    props: {},
+    setup: (props, ctx) => {
+        return () => (
+            <div></div>
+        )
+    }
+})

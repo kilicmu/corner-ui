@@ -1,5 +1,8 @@
 <script lang="tsx">
-import { defineComponent } from '@vue/runtime-dom'
+import {
+  defineComponent, onBeforeUnmount, onMounted, ref,
+} from '@vue/runtime-dom'
+import { throttle } from 'lodash'
 import Header from './Header/index.vue'
 import SideNav from './SideNav/index.vue'
 import Content from './Content/index.vue'
@@ -17,12 +20,15 @@ export default defineComponent({
                 <nav class="layout__side-nav">
                     <SideNav />
                 </nav>
-                <article class="layout__content">
-                    <Content />
+                <article class="layout__right" >
+                    <div class="layout__content">
+                        <Content />
+                    </div>
+                    <div class="layout__phone" >
+                        <DemoPhone/>
+                    </div>
                 </article>
-                <div class="layout__demo-phone">
-                    <DemoPhone/>
-                </div>
+
             </div>
         </div>
     )
@@ -45,21 +51,24 @@ export default defineComponent({
            .layout__side-nav{
                flex: 4;
            }
-           .layout__content{
-               overflow-y: scroll;
-               flex: 14;
-               &::-webkit-scrollbar {
-                   width:8px;
-                   background-color:#3d3d3d;
+           .layout__right{
+               overflow-y: overlay;
+               flex: 20;
+               position:relative;
+               .layout__content {
+                   width: 55vw;
+                   display: inline-block;
+
                }
-               ::-webkit-scrollbar-thumb{
-                   background-color:rgb(0, 0, 0);
+               .layout__phone {
+                   width: 375px;
+                   height: 667px;
+                   top: 95px;
+                   right: 4vw;
+                   position: fixed;
                }
            }
-           .layout__demo-phone{
-               min-width: 375px;
-               flex: 6;
-           }
+
        }
    }
 </style>

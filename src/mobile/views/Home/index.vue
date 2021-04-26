@@ -1,9 +1,9 @@
 <script lang="tsx">
 import { ComponentsDscription } from '@/types/ComponentDescription'
 import { defineComponent } from 'vue'
-import describe from '@/components/describe.json'
+import describe from '@/common/describe.json'
 
-const { routes: rs } = describe as ComponentsDscription
+const { route: rs } = describe as ComponentsDscription
 export default defineComponent({
   setup() {
     return () => {
@@ -22,7 +22,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style>
-
-</style>

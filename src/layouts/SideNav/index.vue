@@ -1,10 +1,10 @@
 <script lang="tsx">
 import { ComponentsDscription } from '@/types/ComponentDescription'
 import { defineComponent, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import describe from '../../components/describe.json'
+import { useRoute } from 'vue-router'
+import describe from '@/common/describe.json'
 
-const { routes } = describe as ComponentsDscription
+const { route: rs } = describe as ComponentsDscription
 export default defineComponent({
   setup() {
     const route = useRoute()
@@ -17,7 +17,7 @@ export default defineComponent({
     return () => {
       return (
         <ul class="side-nav">
-            {routes.map((r) => {
+            {rs.map((r) => {
               const classes = [
                 'side-nav__item',
                 route.name === r.name ? 'side-nav__item--active' : '',

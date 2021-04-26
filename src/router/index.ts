@@ -6,17 +6,29 @@ import {
 import { nextTick } from 'vue'
 import {
   DescriptionItem, ComponentsDscription,
-} from '../types/ComponentDescription'
-import describe from '../components/describe.json'
+} from '@/types/ComponentDescription'
+import describe from '../common/describe.json'
 
 // enforce route description to add component lazy import function;
-const { routes: rs } = describe as ComponentsDscription
+const { route: rs } = describe as ComponentsDscription
+// 为添加组件文档位置
 rs.forEach((r: DescriptionItem) => {
   r.component = () => import(
+    // issue: webpack module build issule
     // eslint-disable-next-line prefer-template
-    '../components/' + (r.name === 'home' ? '' : `${r.name}/`) + 'README.md'
+    '../components/' + r.name + '/README.md'
   )
 })
+
+rs.unshift({
+  name: 'home',
+  path: '/',
+  component: () => import(
+    '../components/README.md'
+  ),
+})
+
+console.log(rs)
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -44,9 +56,10 @@ window.addEventListener('message', (e) => {
 }, false)
 
 router.beforeEach((to, from, next) => {
+  console.log(mobileFrame)
   if (mobileFrame && mobileFrame.contentWindow) {
     mobileFrame.contentWindow.postMessage({
-      to: to.path,
+      to: to.fullPath,
       meta: {
         from: 'main',
         flag: 'router',
