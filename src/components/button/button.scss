@@ -1,0 +1,104 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/var.scss";
+
+.cr-button {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  font-size: $button-medium-font-size;
+  text-align: center;
+  display: inline-block;
+  color: $button-default-color;
+  border: $border-width-base solid $border-color;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $gray-8;
+    border-color: $gray-4;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &:active::before {
+    opacity: 0.05;
+  }
+
+  &--primary {
+    background-color: $button-primary-background-color;
+    color: $button-primary-color;
+    border-color: $button-primary-border-color;
+  }
+  &--danger {
+    background-color: $button-danger-background-color;
+    color: $button-danger-color;
+    border-color: $button-danger-border-color;
+  }
+  &--warning {
+    background-color: $button-warning-background-color;
+    color: $button-warning-color;
+    border-color: $button-warning-border-color;
+  }
+  &--default {
+    background-color: $button-default-background-color;
+    color: $button-default-color;
+    border-color: $button-default-border-color;
+  }
+  &--success {
+    background-color: $button-success-background-color;
+    color: $button-success-color;
+    border-color: $button-success-border-color;
+  }
+
+  &--mini {
+    height: $button-mini-height;
+    font-size: $button-mini-font-size;
+    padding: 0 $padding-xs;
+  }
+
+  &--small {
+    height: $button-small-height;
+    font-size: $button-small-font-size;
+    padding: 0 $padding-sm;
+  }
+
+  &--medium {
+    height: $button-medium-height;
+    font-size: $button-medium-font-size;
+    padding: 0 $padding-md;
+  }
+
+  &--large {
+    height: $button-large-height;
+    font-size: $button-large-font-size;
+    padding: 0 $padding-lg;
+  }
+
+  &--plain {
+    background-color: $button-plain-background-color;
+
+    &.cr-button--primary {
+      color: $button-primary-background-color;
+    }
+
+    &.cr-button--success {
+      color: $button-success-background-color;
+    }
+
+    &.cr-button--danger {
+      color: $button-danger-background-color;
+    }
+
+    &.cr-button--warning {
+      color: $button-warning-background-color;
+    }
+  }
+}

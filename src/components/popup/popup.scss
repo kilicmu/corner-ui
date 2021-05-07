@@ -1,0 +1,63 @@
+.cr-popup {
+    &__container{
+        $radiu: 10px;
+        width: 100%;
+        background: #fff;
+        position: fixed;
+        transition: transform .3s ease-in-out;
+        z-index: 1000;
+        overflow: hidden;
+        &--left, &--right{
+            top: 0;
+            bottom: 0;
+            width: 300px;
+        }
+
+        &--left{
+            left: 0;
+            border-radius: 0 $radiu $radiu 0; 
+            transform: translateX(-100%);
+        }
+
+        &--right{
+            right: 0;
+            border-radius: $radiu 0 0 $radiu; 
+            transform: translateX(100%);
+        }
+
+        &--bottom, &--top {
+            left: 0;
+            right: 0;
+            height: 400px;
+        }
+
+        &--bottom{
+            bottom: 0;
+            border-radius: $radiu $radiu 0 0;
+            transform: translateY(100%);
+        }
+
+        &--top{
+            top: 0;
+            border-radius: 0 0 $radiu $radiu;
+            transform: translateY(-100%);
+        }
+
+        &--show{
+            transform: translate(0);
+        }
+    }
+    &__header {
+        min-height: 50px;
+        display: flex;
+        &-left {
+            flex: 3;
+        }
+        &-center {
+            flex: 6;
+        }
+        &-right {
+            flex: 3;
+        }
+    }
+}

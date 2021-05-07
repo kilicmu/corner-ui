@@ -1,0 +1,50 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+pre {
+    border-radius: 4px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+code{
+    font-size: 16px;
+}
+
+.hljs-keyword{
+    color: rgb(212, 0, 255);
+}
+
+.hljs-number {
+    color: rgb(255, 123, 0);
+}
+
+.hljs-string {
+    color: greenyellow;
+}
+
+.hljs-function > .hljs-title {
+    color: rgb(0, 132, 255);
+}
+
+.hljs-function > .hljs-params {
+    color: rgb(0, 132, 255);
+}

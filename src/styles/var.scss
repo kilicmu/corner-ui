@@ -1,0 +1,82 @@
+$namespace: "cr-";
+// Color Palette
+$black: #000;
+$white: #fff;
+$gray-1: #f7f8fa;
+$gray-2: #f2f3f5;
+$gray-3: #ebedf0;
+$gray-4: #dcdee0;
+$gray-5: #c8c9cc;
+$gray-6: #969799;
+$gray-7: #646566;
+$gray-8: #323233;
+$red: #f26522;
+$blue: rgb(0, 174, 239);
+$orange: rgb(255, 194, 14);
+$orange-dark: #ed6a0c;
+$orange-light: #fffbe8;
+$green: rgb(141, 198, 63);
+
+// animation
+$animation-duration-fast: 0.5s;
+
+// Padding
+$padding-base: 4px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
+// Border
+$border-color: $gray-3;
+$border-width-base: 1px;
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-max: 999px;
+
+// Component Colors
+$text-color: $gray-8;
+$active-color: $gray-2;
+$active-opacity: 0.7;
+$disabled-opacity: 0.5;
+$background-color: $gray-1;
+$background-color-light: #fafafa;
+$text-link-color: #576b95;
+
+// Font
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+
+// Button
+$button-mini-height: 24px;
+$button-mini-font-size: $font-size-xs;
+$button-small-height: 32px;
+$button-small-font-size: $font-size-sm;
+$button-medium-height: 40px;
+$button-large-height: 48px;
+$button-large-font-size: $font-size-lg;
+$button-medium-font-size: $font-size-md;
+$button-default-color: $text-color;
+$button-default-background-color: $white;
+$button-default-border-color: $border-color;
+$button-primary-color: $white;
+$button-primary-background-color: $blue;
+$button-primary-border-color: $blue;
+$button-success-color: $white;
+$button-success-background-color: $green;
+$button-success-border-color: $green;
+$button-danger-color: $white;
+$button-danger-background-color: $red;
+$button-danger-border-color: $red;
+$button-warning-color: $white;
+$button-warning-background-color: $orange;
+$button-warning-border-color: $orange;
+$button-border-width: $border-width-base;
+$button-border-radius: $border-radius-sm;
+$button-round-border-radius: $border-radius-max;
+$button-plain-background-color: $white;
+$button-disabled-opacity: $disabled-opacity;
