@@ -1,8 +1,8 @@
 Arguments: 
-  /home/herin/.nvm/versions/node/v14.16.0/bin/node /home/herin/.nvm/versions/node/v14.16.0/bin/yarn add @types/qiankun -D
+  /home/herin/.nvm/versions/node/v14.16.0/bin/node /home/herin/.nvm/versions/node/v14.16.0/bin/yarn add @vue/typescript/recommended -D
 
 PATH: 
-  /home/herin/.autojump/bin:/home/herin/.autojump/bin:/home/herin/.vscode-server/bin/3c4e3df9e89829dce27b7b5c24508306b151f30d/bin:/home/herin/.autojump/bin:/home/herin/.nvm/versions/node/v14.16.0/bin:/home/herin/.autojump/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/f/flutter_windows_v1.12.13+hotfix.9-stable/flutter/bin:/mnt/c/Users/kilic/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/kilic/.cargo/bin:/mnt/c/Users/kilic/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Bandizip/:/mnt/f/flutter_windows_v1.12.13+hotfix.9-stable/flutter/bin:/mnt/c/Users/kilic/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/kilic/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/f/GoLand 2020.3.4/bin:/mnt/f/IntelliJ IDEA 2020.3.3/bin:/mnt/c/Users/kilic/.dotnet/tools:/usr/local/go/bin:/usr/local/go/bin
+  /home/herin/.autojump/bin:/home/herin/.autojump/bin:/home/herin/.vscode-server/bin/cfa2e218100323074ac1948c885448fdf4de2a7f/bin:/home/herin/.autojump/bin:/home/herin/.nvm/versions/node/v14.16.0/bin:/home/herin/.autojump/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/f/flutter_windows_v1.12.13+hotfix.9-stable/flutter/bin:/mnt/c/Users/kilic/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/kilic/.cargo/bin:/mnt/c/Users/kilic/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Bandizip/:/mnt/f/flutter_windows_v1.12.13+hotfix.9-stable/flutter/bin:/mnt/c/Users/kilic/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/kilic/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/f/GoLand 2020.3.4/bin:/mnt/f/IntelliJ IDEA 2020.3.3/bin:/mnt/c/Users/kilic/.dotnet/tools:/usr/local/go/bin:/usr/local/go/bin
 
 Yarn version: 
   1.22.10
@@ -14,8 +14,8 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/@types%2fqiankun: Not found
-      at Request.params.callback [as _callback] (/home/herin/.nvm/versions/node/v14.16.0/lib/node_modules/yarn/lib/cli.js:66988:18)
+  Error: https://registry.npm.taobao.org/@vue%2ftypescript/recommended: Request "https://registry.npm.taobao.org/@vue%2ftypescript/recommended" returned a 405
+      at Request.params.callback [as _callback] (/home/herin/.nvm/versions/node/v14.16.0/lib/node_modules/yarn/lib/cli.js:66997:18)
       at Request.self.callback (/home/herin/.nvm/versions/node/v14.16.0/lib/node_modules/yarn/lib/cli.js:140662:22)
       at Request.emit (events.js:315:20)
       at Request.<anonymous> (/home/herin/.nvm/versions/node/v14.16.0/lib/node_modules/yarn/lib/cli.js:141634:10)
@@ -39,24 +39,17 @@ npm manifest:
     },
     "dependencies": {
       "@vue/compiler-dom": "^3.0.11",
-      "highlight.js": "^10.7.2",
-      "markdown-it": "^12.0.6",
-      "markdown-it-abbr": "^1.0.4",
-      "markdown-it-container": "^3.0.0",
-      "markdown-it-deflist": "^2.1.0",
-      "markdown-it-emoji": "^2.0.0",
-      "markdown-it-mark": "^3.0.1",
-      "markdown-it-multimd-table": "^4.1.0",
-      "markdown-it-task-lists": "^2.1.1",
+      "lodash-es": "^4.17.21",
       "punycode": "^2.1.1",
       "qiankun": "^2.4.1",
       "react": "^17.0.2",
       "vue": "^3.0.4",
-      "vue-router": "^4.0.6"
+      "vue-router": "4"
     },
     "devDependencies": {
       "@types/highlight.js": "^10.1.0",
       "@types/jest": "^26.0.23",
+      "@types/lodash-es": "^4.17.4",
       "@types/markdown-it": "^12.0.1",
       "@types/markdown-it-container": "^2.0.3",
       "@vitejs/plugin-vue": "^1.2.2",
@@ -865,6 +858,18 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.npm.taobao.org/@types/linkify-it/download/@types/linkify-it-3.0.1.tgz#4d26a9efe3aa2caf829234ec5a39580fc88b6001"
     integrity sha1-TSap7+OqLK+CkjTsWjlYD8iLYAE=
+  
+  "@types/lodash-es@^4.17.4":
+    version "4.17.4"
+    resolved "https://registry.npm.taobao.org/@types/lodash-es/download/@types/lodash-es-4.17.4.tgz#b2e440d2bf8a93584a9fd798452ec497986c9b97"
+    integrity sha1-suRA0r+Kk1hKn9eYRS7El5hsm5c=
+    dependencies:
+      "@types/lodash" "*"
+  
+  "@types/lodash@*":
+    version "4.14.168"
+    resolved "https://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.168.tgz?cache=0&sync_timestamp=1613379222224&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Flodash%2Fdownload%2F%40types%2Flodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
+    integrity sha1-/iRjLnm3rePxMoka//hsql5c4Ag=
   
   "@types/markdown-it-container@^2.0.3":
     version "2.0.3"
@@ -3458,6 +3463,11 @@ Lockfile:
     dependencies:
       p-locate "^4.1.0"
   
+  lodash-es@^4.17.21:
+    version "4.17.21"
+    resolved "https://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+    integrity sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=
+  
   lodash.camelcase@^4.3.0:
     version "4.3.0"
     resolved "https://registry.npm.taobao.org/lodash.camelcase/download/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -5331,7 +5341,7 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/vscode-web-custom-data/download/vscode-web-custom-data-0.3.3.tgz#9e1f2388c718d6f190038a19d144834a436b876f"
     integrity sha1-nh8jiMcY1vGQA4oZ0USDSkNrh28=
   
-  vue-router@^4.0.6:
+  vue-router@4:
     version "4.0.6"
     resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.6.tgz?cache=0&sync_timestamp=1617697726574&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.6.tgz#91750db507d26642f225b0ec6064568e5fe448d6"
     integrity sha1-kXUNtQfSZkLyJbDsYGRWjl/kSNY=
