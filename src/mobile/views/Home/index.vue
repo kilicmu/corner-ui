@@ -1,23 +1,4 @@
 <script lang="tsx">
-<<<<<<< HEAD
-import { ComponentsDscription } from '@/types/ComponentDescription'
-import { defineComponent } from 'vue'
-import describe from '@/common/describe.json'
-
-const { route: rs } = describe as ComponentsDscription
-export default defineComponent({
-  setup() {
-    return () => {
-      return (
-        <ul class="mobile-home">
-            {rs.map((r) => {
-              return (
-                <li>
-                  <router-link to={r.path}>{r.name}</router-link>
-                </li>
-              )
-            })}
-=======
 import { defineComponent } from 'vue'
 // @ts-ignore
 import describe from '@component-describe'
@@ -47,15 +28,12 @@ export default defineComponent({
                 )
               })
             }
->>>>>>> dev
         </ul>
       )
     }
   },
 })
 </script>
-<<<<<<< HEAD
-=======
 
 <style lang="scss" scoped>
 .mobile-home {
@@ -82,4 +60,3 @@ export default defineComponent({
   }
 }
 </style>
->>>>>>> dev

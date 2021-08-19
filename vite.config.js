@@ -5,6 +5,8 @@ import vue from "@vitejs/plugin-vue"
 import { defineConfig } from "vite"
 import { describeGenerate } from "./load-shell/describe-generate"
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import postcssPx2Vw from "@moohng/postcss-px2vw"
+import autoprefixer from "autoprefixer"
 
 /**
  * @type {import('vite').UserConfig}
@@ -52,6 +54,16 @@ const config = defineConfig({
             content: () => (describeGenerate())
         }),
     ],
+    css: {
+        postcss: {
+            plugins: [
+                autoprefixer,
+                postcssPx2Vw({
+                    viewportWidth: 375
+                }),
+            ]
+        }
+    }
 })
 
 export default config

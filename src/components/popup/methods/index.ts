@@ -8,6 +8,7 @@ let startCoordinates = {
 
 type EmitType = (event: string, ...args: any[]) => void
 export const _touchstart = (e: TouchEvent, direction: BaseDirection, emit: EmitType) => {
+    e.preventDefault();
     movingElm = getContainer(e.target as HTMLElement)
     const {clientX, clientY} = e.touches[0]
     startCoordinates.x = clientX
