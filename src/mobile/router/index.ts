@@ -36,7 +36,6 @@ window.onmessage = (e:MessageEvent<ReturnType<typeof routeChangeActionCreator>>)
   if(e.origin === location.origin) {
       const { data } = e;
       reducer(data)
-      // router.replace(data.payload.to)
   }
 }
 

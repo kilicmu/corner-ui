@@ -1,8 +1,8 @@
 import {resolve} from "path"
-import md from "/home/herin/workspace/vue-markdown-resolver"
+import md from "vite-plugin-vue-markdown-resolver"
 import provider from "vite-plugin-inject-virtual-content"
 import vue from "@vitejs/plugin-vue"
-import {defineConfig} from "vite"
+import { defineConfig } from "vite"
 import { describeGenerate } from "./load-shell/describe-generate"
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
@@ -10,17 +10,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
  * @type {import('vite').UserConfig}
  */
 const config = defineConfig({
-    esbuild: {
-        // jsxFactory: 'h', // 不在React使用JSX使用自定义规则
-        // jsxFragment: 'Fragment',
-        // jsxInject: `import React from 'react'` // 自动注入 import 语句
-    },
     resolve: {
-        // alias: {
-            
-        //     // '@assets': './src/assets',
-        //     // '@components': './src/components',
-        // },
         alias: [
             {
                 find: '@utils',
@@ -56,21 +46,11 @@ const config = defineConfig({
         vueJsx(),
         {
            ...md({}),
-            // apply: build
         },
         provider({
             token: '@component-describe',
             content: () => (describeGenerate())
         }),
-        {
-            configureServer: (s) => {
-                s.middlewares.use((req, resp, next) => {
-                    console.log('====>', req.url)
-                    next()
-                    console.log('<====', req.url)
-                })
-            }
-        }
     ],
 })
 
