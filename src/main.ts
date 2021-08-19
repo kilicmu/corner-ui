@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-import Layouts from './layouts/index.vue'
-import router from './router'
-import '@/styles/main.css'
+import Layout from "@/layouts/index.vue"
+import './md.css'
+import './index.css'
+import router from "./router/index";
 
-createApp(Layouts).use(router).mount('#app')
-// new Vue({
-//   render: (h) => h(Layouts),
-// }).$mount('#app')
+createApp(Layout)
+.use(router)
+.mount('#app')

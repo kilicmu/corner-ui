@@ -1,66 +1,46 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import {
-  DescriptionItem, ComponentsDscription,
-} from '@/types/ComponentDescription'
-import describe from '@/common/describe.json'
+import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from 'vue-router'
+// @ts-ignore
+import describe from '@component-describe';
+import { defineAsyncComponent } from '@vue/runtime-core';
+import { routerReducerFactory } from '../../tools/routerUtils/reducer';
+import { routeChangeActionCreator } from '../../tools/routerUtils/action';
 
-// enforce route description to add component lazy import function;
-const { route: rs } = describe as ComponentsDscription
 
-// 对描述增强, 添加组件函数
-rs.forEach((r:DescriptionItem) => {
-  r.component = () => import(
-    // issue for webpack
-    // eslint-disable-next-line prefer-template
-    '../../components/' + r.name + '/examples/index.vue'
-  )
-})
+const routes: RouteRecordRaw[] = describe.reduce<RouteRecordRaw[]>((routes:RouteRecordRaw[], next: RouteRecordRaw) => {
+  return [
+      ...routes,
+      {
+          ...next,
+          component: defineAsyncComponent(
+            () => import(`../../components/${String(next.name)}/examples/index.vue`),
+          )
+      }
+  ]
+}, [])
 
-rs.unshift({
+routes.unshift({
   name: 'home',
   path: '/',
   component: () => import(
-    // eslint-disable-next-line prefer-template
     '../views/Home/index.vue'
   ),
 })
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const routes: Array<RouteRecordRaw> = rs
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-})
+});
 
-interface MessageData {
-  to: string;
-  meta: {
-    from: string;
-    flag: string;
+const reducer = routerReducerFactory(router)
+window.onmessage = (e:MessageEvent<ReturnType<typeof routeChangeActionCreator>>) => {
+  if(e.origin === location.origin) {
+      const { data } = e;
+      reducer(data)
   }
 }
 
-window.addEventListener('message', (e) => {
-  console.log(e.data.to, router.currentRoute.value.fullPath)
-  if (e.data.to === router.currentRoute.value.fullPath) {
-    return
-  }
-  if (e.data?.meta?.flag === 'router') {
-    router.push(e.data.to)
-  }
-}, false)
-
-// 处理跳转前与mobile通信问题
 router.beforeEach((to, from, next) => {
-  window.parent.postMessage({
-    to: to.fullPath,
-    meta: {
-      from: 'mobile',
-      flag: 'router',
-    },
-  }, '*')
+  window.parent.postMessage(routeChangeActionCreator({to:to.path, isMobile: false}), location.href)
   next()
 })
 

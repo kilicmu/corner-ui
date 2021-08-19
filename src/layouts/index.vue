@@ -1,8 +1,14 @@
 <script lang="tsx">
 import {
+<<<<<<< HEAD
   defineComponent, onBeforeUnmount, onMounted, ref,
 } from '@vue/runtime-dom'
 import { throttle } from 'lodash'
+=======
+  defineComponent,
+} from '@vue/runtime-dom'
+import { throttle } from 'lodash-es'
+>>>>>>> dev
 import Header from './Header/index.vue'
 import SideNav from './SideNav/index.vue'
 import Content from './Content/index.vue'

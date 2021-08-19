@@ -108,8 +108,13 @@ program
         console.log('component already exist!')
         process.exit(-1)
       } else {
+<<<<<<< HEAD
         console.error('know error~')
         console.error(e)
+=======
+        console.error('unknow error~')
+        console.error(e.message)
+>>>>>>> dev
         rmdirSync(resolve(COMPONENTS_PATH, componentPath), { recursive: true })
         process.exit(-1)
       }

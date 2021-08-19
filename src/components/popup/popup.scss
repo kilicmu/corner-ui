@@ -49,5 +49,18 @@
     }
     &__header {
         min-height: 50px;
+<<<<<<< HEAD
+=======
+        display: flex;
+        &-left {
+            flex: 3;
+        }
+        &-center {
+            flex: 6;
+        }
+        &-right {
+            flex: 3;
+        }
+>>>>>>> dev
     }
 }

@@ -1,7 +1,11 @@
 <script lang="tsx">
+<<<<<<< HEAD
 import {
   createNamespace,
 } from '@/utils/create'
+=======
+import { createNamespace } from '@utils/create'
+>>>>>>> dev
 import { EmitsOptions, SetupContext } from 'vue'
 import './overlay.scss'
 
