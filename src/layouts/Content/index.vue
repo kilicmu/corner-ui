@@ -5,17 +5,18 @@ export default defineComponent({
   components:{KeepAlive},
   setup() {
     return () => (
-        <div class="content">
+        <article class="content">
           <keep-alive>
             <router-view></router-view>
           </keep-alive>
-        </div>
+        </article>
     )
   },
 })
 </script>
 <style lang="scss" scoped>
 .content {
-    padding: 0 50px;
+    width: 100%;
+    padding: 0 30px;
 }
 </style>
